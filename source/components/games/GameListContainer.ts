@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 
 import { GameList, GameListProps, ConnectedProps, ConnectedDispatch } from './GameList';
 import { GlobalState } from '../../state/GlobalState';
+import { fetchGames } from '../../actions/games';
 
 function mapStateToProps(state: GlobalState, props: GameListProps): ConnectedProps {
     return {
-
+      games: state.games,
     }
 };
 
 function mapDispatchToProps(dispatch: Dispatch<any>): ConnectedDispatch {
-    return bindActionCreators({ 
-        
+    return bindActionCreators({
+      fetchGames,
     }, dispatch);
 };
 

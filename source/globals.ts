@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 
 import { Config } from './models/Config';
 import { GlobalState } from './state/GlobalState';
@@ -10,10 +11,11 @@ export let config: Config;
 
 export function initGlobals() {
     config = new Config();
+    // const logger = createLogger();
     store = createStore<GlobalState>(
         combineReducers<GlobalState>({
             games: gamesReducer,
         }),
-        applyMiddleware(thunk)
+        applyMiddleware(thunk),
     );
 }

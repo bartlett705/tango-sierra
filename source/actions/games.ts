@@ -1,4 +1,6 @@
 import { GlobalStateGetter } from "../state/GlobalState";
+import { Game } from "../models/Game";
+import { config } from '../globals';
 
 // Fetch Games Started
 export type FETCH_GAMES_STARTED = 'FETCH_GAMES_STARTED';
@@ -7,7 +9,8 @@ export type FetchGamesStarted = {
     type: FETCH_GAMES_STARTED;
 };
 
-function fetchGamesStarted(): FetchGamesStarted { 
+function fetchGamesStarted(): FetchGamesStarted {
+    console.log('fetching...');
     return { type: FETCH_GAMES_STARTED };
 }
 
@@ -16,10 +19,11 @@ export type FETCH_GAMES_SUCCEEDED = 'FETCH_GAMES_SUCCEEDED';
 export const FETCH_GAMES_SUCCEEDED: FETCH_GAMES_SUCCEEDED = 'FETCH_GAMES_SUCCEEDED';
 export type FetchGamesSucceeded = {
     type: FETCH_GAMES_SUCCEEDED;
+    games: Game[];
 };
 
-function fetchGamesSucceeded(): FetchGamesSucceeded { 
-    return { type: FETCH_GAMES_SUCCEEDED };
+function fetchGamesSucceeded(games: Game[]): FetchGamesSucceeded {
+    return { type: FETCH_GAMES_SUCCEEDED, games };
 }
 
 // Fetch Games Failed
@@ -29,7 +33,7 @@ export type FetchGamesFailed = {
     type: FETCH_GAMES_FAILED;
 };
 
-function fetchGamesFailed(): FetchGamesFailed { 
+function fetchGamesFailed(): FetchGamesFailed {
     return { type: FETCH_GAMES_FAILED };
 }
 
@@ -37,7 +41,16 @@ function fetchGamesFailed(): FetchGamesFailed {
 export function fetchGames() {
     return (dispatch: Redux.Dispatch<any>, getState: GlobalStateGetter) => {
         dispatch(fetchGamesStarted());
-
+        fetch(config.gamesDataURL)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            dispatch(fetchGamesSucceeded(data.data));
+          })
+          .catch((err:Error)=> {
+            console.log('Error! ', err);
+            dispatch(fetchGamesFailed());
+        });
         // Implement remainder of thunk
     };
 }

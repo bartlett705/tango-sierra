@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Game } from './Game';
 
 export interface GameListProps extends React.Props<GameList> {
     // Define any props taken by List itself.
@@ -15,13 +16,27 @@ export interface ConnectedDispatch {
 type CombinedTypes = GameListProps & ConnectedProps & ConnectedDispatch;
 
 export class GameList extends React.Component<CombinedTypes, void> {
+    componentWillMount() {
+      this.props.fetchGames();
+    }
     render() {
+        console.log(this.props);
         return (
             <div className='GameList--root'>
                 <img src="/assets/images/flame.png" />
-                <h1>Curse React Test</h1>
-                <p>This is the GameList component, located in <code>components/games/GameList.tsx</code>. Start your implementation here.</p>
+                <table className='GameList--table' cellspacing="0">
+                  <tbody className='GameList--table-body'>
+                    <tr>
+                      <td></td>
+                      <td>Game</td>
+                      <td>Addons?</td>
+                      <td>Voice?</td>
+                    </tr>
+
+                {this.props.games.games.map(game => <Game gameData={game} />)}
+                  </tbody>
+                </table>
             </div>
         );
     }
-} 
+}
