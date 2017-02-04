@@ -7,13 +7,20 @@
 body {
     font-family: 'Open Sans';
     font-size: 14px;
-    background: #efefef;
+    background: dodgerblue * 0.2;
 }
 
 h1, h2 {
     font-weight: normal;
 }
 
+.check {
+  background: url('/assets/images/check.svg')
+}
+.cancel {
+  background: url('/assets/images/cancel.svg')
+}
 // Component imports
 
 @import '../components/games/GameList';
+@import '../components/games/GameDetail';

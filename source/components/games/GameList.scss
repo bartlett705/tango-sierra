@@ -3,36 +3,45 @@ $bgColor: dodgerblue * 0.2;
 $txtColor: white;
 // Placeholder styling for welcome.
 .GameList--root {
+    height: 100%;
+    width: 100%;
     background-color: $bgColor;
     text-align: center;
     margin-top: 30px;
-}
 
-.GameList--table {
-  background-color: $bgColor * 1.2;
-  border: 2px solid $bgColor * 3;
-  border-radius: 1em;
-  // border-collapse: collapse;
-  border-spacing: 0;
-  color: $txtColor;
-  margin: 0 auto;
-}
-tr:first-child td:first-child {
-    border-top-left-radius: 1em;
-}
+    .GameList--table {
+      width: 50em;
+      background-color: $bgColor * 1.2;
+      border: 2px solid $bgColor * 3;
+      border-radius: 2em;
+      // border-collapse: collapse;
+      border-spacing: 0;
+      color: $txtColor;
+      margin: 0 auto;
+      .title-row {
+        font-size: 2em;
+      }
+      tr:not(.title-row) {
+        cursor: pointer;
+      }
+      tr:first-child td:first-child {
+          border-top-left-radius: 1em;
+      }
 
-tr:first-child td:last-child {
-    border-top-right-radius: 1em;
-}
-tr td {
-  padding: 0.5em 2em;
-}
-tr:nth-child(even) {
-  background-color: $bgColor * 0.8;
-}
-tr:nth-child(odd)  {
-  background-color: $bgColor * 1.2;
-}
-tr:first-child {
-  background-color: $bgColor * 2;
+      tr:first-child td:last-child {
+          border-top-right-radius: 1em;
+      }
+      tr td {
+        padding: 0.5em 2em;
+      }
+      tr:nth-child(even) {
+        background-color: $bgColor * 0.8;
+      }
+      tr:nth-child(odd)  {
+        background-color: $bgColor * 1.2;
+      }
+      tr:first-child {
+        background-color: $bgColor * 2;
+      }
+  }
 }

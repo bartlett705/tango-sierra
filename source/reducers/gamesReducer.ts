@@ -1,20 +1,23 @@
 import { GamesState } from "../state/GamesState";
 import {
-    FetchGamesStarted, FetchGamesSucceeded, FetchGamesFailed,
-    FETCH_GAMES_STARTED, FETCH_GAMES_SUCCEEDED, FETCH_GAMES_FAILED,
+    FetchGamesStarted, FetchGamesSucceeded, FetchGamesFailed, setDetailIndex,
+    FETCH_GAMES_STARTED, FETCH_GAMES_SUCCEEDED, FETCH_GAMES_FAILED, SET_DETAIL_INDEX
 } from '../actions/games';
 
-type Actions = FetchGamesStarted | FetchGamesSucceeded | FetchGamesFailed;
+type Actions = FetchGamesStarted | FetchGamesSucceeded | FetchGamesFailed | setDetailIndex;
 
 const initialState: GamesState = {
     games: [],
     isFetching: false,
     isError: false,
+    detailIndex: null,
 };
 
 export function gamesReducer(state: GamesState = initialState, action: Actions) {
     console.log('state: ', state, 'action: ', action);
     switch (action.type) {
+        case SET_DETAIL_INDEX:
+            return Object.assign({}, state, { detailIndex: action.detailIndex });
         case FETCH_GAMES_STARTED:
             return Object.assign({}, state, { isFetching: true });
         case FETCH_GAMES_FAILED:

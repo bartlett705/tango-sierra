@@ -14,16 +14,28 @@ function fetchGamesStarted(): FetchGamesStarted {
     return { type: FETCH_GAMES_STARTED };
 }
 
+// Set index of game to view details
+export type SET_DETAIL_INDEX = 'SET_DETAIL_INDEX';
+export const SET_DETAIL_INDEX: SET_DETAIL_INDEX = 'SET_DETAIL_INDEX';
+export type SetDetailIndex = {
+    type: SET_DETAIL_INDEX;
+    detailIndex: Number;
+};
+
+export function setDetailIndex(detailIndex: Number): SetDetailIndex {
+    return { type: SET_DETAIL_INDEX, detailIndex };
+}
+
 // Fetch Games Succeeded
 export type FETCH_GAMES_SUCCEEDED = 'FETCH_GAMES_SUCCEEDED';
 export const FETCH_GAMES_SUCCEEDED: FETCH_GAMES_SUCCEEDED = 'FETCH_GAMES_SUCCEEDED';
 export type FetchGamesSucceeded = {
-    type: FETCH_GAMES_SUCCEEDED;
-    games: Game[];
+  type: FETCH_GAMES_SUCCEEDED;
+  games: Game[];
 };
 
 function fetchGamesSucceeded(games: Game[]): FetchGamesSucceeded {
-    return { type: FETCH_GAMES_SUCCEEDED, games };
+  return { type: FETCH_GAMES_SUCCEEDED, games };
 }
 
 // Fetch Games Failed
