@@ -11,8 +11,8 @@ export const Game: React.SFC<GameComponentProps> = ({ gameData, viewDetail }) =>
     <tr onClick={viewDetail}>
       <td><img src={config.gameIconURLTemplate({ gameID: gameData.ID })}/></td>
       <td>{gameData.Name}</td>
-      <td>{gameData.SupportsAddons ? 'Yeah!' : 'Nah...' }</td>
-      <td>{gameData.SupportsVoice ? 'Totally!' : 'Nah...' }</td>
+      <td><div className={gameData.SupportsAddons ? 'check' : 'cancel' }></div></td>
+      <td><div className={gameData.SupportsVoice ? 'check' : 'cancel' }></div></td>
     </tr>
   );
 };

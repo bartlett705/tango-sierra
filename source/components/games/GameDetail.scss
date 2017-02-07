@@ -1,10 +1,11 @@
 // Sass for the GameDetail component goes here.
 .GameDetail--root {
+  vertical-align: middle;
   text-align: left;
   width: 60%;
-  height: 80vh;
+  height: 40vh;
   position: fixed;
-  top: 10vh;
+  top: 30vh;
   left: 20%;
   background-color: #efefef;
   border-radius: 1em;
@@ -23,16 +24,18 @@
   ul {
     list-style: none;
   }
-  td {
-    padding: 0.25em;
-    border: 1px solid black;
+  tr:first-child {
+    border-bottom: 1px solid black;
+  }
+  td:first-child {
+    border-right: 1px solid black;
   }
   span {
     margin: 0 auto;
     width: 40%;
     border: 1px solid black;
   }
-  h3 {
-
+  h4 {
+    margin: 0 2em;
   }
 }

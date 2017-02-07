@@ -14,11 +14,16 @@ h1, h2 {
     font-weight: normal;
 }
 
+.check, .cancel {
+  margin: 0 auto;
+  height: 32px;
+  width: 32px;
+}
 .check {
-  background: url('/assets/images/check.svg')
+  background: url('/assets/images/check.svg');
 }
 .cancel {
-  background: url('/assets/images/cancel.svg')
+  background: url('/assets/images/cancel.svg');
 }
 // Component imports
 

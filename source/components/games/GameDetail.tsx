@@ -17,12 +17,12 @@ export const GameDetail: React.SFC<GameDetailComponentProps> = ({ gameData }) =>
       <table>
         <tbody>
           <tr>
-            <td>Addons? </td>
-            <td>Voice? </td>
+            <td><h4>Addons?</h4> </td>
+            <td><h4>Voice?</h4> </td>
             </tr>
             <tr>
-            <td>{gameData.SupportsAddons ? 'Yeah!' : 'Nah...' }</td>
-      <td>{gameData.SupportsVoice ? 'Totally!' : 'Nah...' }</td>
+            <td><div className={gameData.SupportsAddons ? 'check' : 'cancel' }></div></td>
+      <td><div className={gameData.SupportsVoice ? 'check' : 'cancel' }></div></td>
       </tr>
       </tbody>
       </table>
