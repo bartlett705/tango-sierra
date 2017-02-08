@@ -1,4 +1,4 @@
-export const gamesDataFixture = [
+export const gamesData = [
     {
       "ID": 1,
       "Name": "World of Warcraft",

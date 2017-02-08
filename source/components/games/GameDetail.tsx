@@ -2,7 +2,7 @@ import * as React from 'react';
 import { config } from "./../../globals";
 import { Game } from '../../models/Game';
 
-interface GameDetailComponentProps {
+export interface GameDetailComponentProps {
   gameData: Game;
 }
 
@@ -15,7 +15,7 @@ export const GameDetail: React.SFC<GameDetailComponentProps> = ({ gameData }) =>
       <div>
       <img
         alt={gameData.Name}
-        src={config.gameIconURLTemplate({ gameID: gameData.ID })}/>
+        src={`https://clientupdate-v6.cursecdn.com/GameAssets/${gameData.ID}/Icon64.png`} />
       <h2>{gameData.Name} ({gameData.Slug})</h2>
       <table>
         <tbody>

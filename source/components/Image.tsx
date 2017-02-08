@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-const Image = React.createClass({
+export const Image: React.ClassicComponentClass<{}> = React.createClass({
   getInitialState: function() {
     return {
       loaded: false,
@@ -28,14 +28,11 @@ const Image = React.createClass({
 
   render: function() {
     const { className, ...props } = this.props;
-    const imgClasses = 'image';
     const rootClassName = this.state.loaded ?
       'image image-loaded' :
       'image';
     return (
-      <img ref="img" {...props} className={rootClassName} />
+      <img ref="img" {...props} className={rootClassName + className} />
     );
   },
 });
-
-export default Image;

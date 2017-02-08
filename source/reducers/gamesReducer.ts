@@ -22,7 +22,7 @@ export function gamesReducer(state: GamesState = initialState, action: Actions) 
         case SET_DETAIL_INDEX:
             return Object.assign({}, state, { detailIndex: action.detailIndex });
         case FETCH_GAMES_STARTED:
-            return Object.assign({}, state, { isFetching: true });
+            return Object.assign({}, state, { isFetching: true, progress: 0 });
         case FETCH_GAMES_FAILED:
             return Object.assign({}, state, { isFetching: false, isError: true });
         case FETCH_GAMES_SUCCEEDED:
