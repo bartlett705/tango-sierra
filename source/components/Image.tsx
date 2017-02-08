@@ -32,7 +32,7 @@ export const Image: React.ClassicComponentClass<{}> = React.createClass({
       'image image-loaded' :
       'image';
     return (
-      <img ref="img" {...props} className={rootClassName + className} />
+      <img ref="img" {...props} className={rootClassName + ' ' + className} />
     );
   },
 });

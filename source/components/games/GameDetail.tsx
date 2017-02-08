@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { config } from "./../../globals";
 import { Game } from '../../models/Game';
 
 export interface GameDetailComponentProps {
