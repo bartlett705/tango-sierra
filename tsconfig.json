@@ -3,7 +3,7 @@
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "lib": ["dom", "es2016"],
+        "lib": ["dom", "es2016", "jest"],
         "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitAny": true,
@@ -12,6 +12,7 @@
         "suppressImplicitAnyIndexErrors": true,
         "target": "es5"
     },
+    "types": ["jest"],
     "exclude": [
         "node_modules"
     ],

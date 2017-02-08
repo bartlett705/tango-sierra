@@ -37,5 +37,4 @@ describe('Component: <Game Entry />', () => {
     expect(wrapper.find('.gameImage').first().props().src).toEqual(`https://clientupdate-v6.cursecdn.com/GameAssets/${gameData.ID}/Icon64.png`);
   });
 
-
 });
