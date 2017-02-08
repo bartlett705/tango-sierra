@@ -12,6 +12,7 @@ function mapStateToProps(state: GlobalState, props: GameListProps): ConnectedPro
       isFetching: state.games.isFetching,
       isError: state.games.isError,
       detailIndex: state.games.detailIndex,
+      progress: state.games.progress,
     };
 };
 

@@ -1,0 +1,7 @@
+[todo]
+
+-eliminate typescript errors
+-search component with filter piece of state and onChange
+-fix loading components
+-image loading component
+-jest tests

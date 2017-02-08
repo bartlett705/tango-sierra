@@ -13,14 +13,16 @@
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "testPathIgnorePatterns": [
-      "__tests__/utils"
+      "__tests__/utils",
+      "__tests__/fixtures"
     ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js"
     ],
-    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "verbose": true
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +31,7 @@
     "lodash": "^4.17.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-imageloader": "^2.1.0",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
     "redux": "^3.6.0",

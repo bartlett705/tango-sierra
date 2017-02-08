@@ -4,4 +4,6 @@ export interface GamesState {
     games: Game[];
     isFetching: boolean;
     isError: boolean;
+    detailIndex: number;
+    progress: number;
 }

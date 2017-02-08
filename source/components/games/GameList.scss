@@ -19,7 +19,7 @@ $txtColor: white;
       color: $txtColor;
       margin: 0 auto;
       .title-row {
-        font-size: 2em;
+        font-size: 1.5em;
       }
       tr:not(.title-row) {
         cursor: pointer;
@@ -30,6 +30,12 @@ $txtColor: white;
 
       tr:first-child td:last-child {
           border-top-right-radius: 1em;
+      }
+      tr:last-child td:first-child {
+          border-bottom-left-radius: 2em;
+      }
+      tr:last-child td:last-child {
+          border-bottom-right-radius: 2em;
       }
       tr td {
         padding: 0.5em 2em;
