@@ -21,7 +21,7 @@ describe('Component: <Game List />', () => {
   });
 
   it('renders a #banner Image', () => {
-    expect(wrapper.find('#banner')).toExist();
+    expect(wrapper.find('#banner').length).toEqual(1);
   });
 
   it('renders a <GameEntry /> for each Game when passed gameData', () => {

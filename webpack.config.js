@@ -25,4 +25,9 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     ],
+    externals: {
+    'react/lib/ExecutionEnvironment': true,
+    'react/addons': true,
+    'react/lib/ReactContext': true,
+    }
 };
