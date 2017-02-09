@@ -1,7 +1,7 @@
 [todo]
 
--eliminate typescript errors
--search component with filter piece of state and onChange
--fix loading components
--image loading component
--jest tests
+I didn't end up having time to implement all of the bonus features,
+but I wanted to include some thoughts on how I would do it:
+
+- Game Search - Since we already have all the game info available, I would add a text input box at the top of the page, with its value bound to a string state property called 'searchTerm' via a new action creator / reducer case triggered by the text input's onChange event handler.  Finally, I would add an Array.filter call before the gameData.map call in GameList.tsx that would only pass through game's for which gameData.Name.includes(SearchTerm) === true.  This should implement real-time game filtering by text.
+- Periodic Updates - perhaps slightly better than wrapping our call to fetchGames in GameList in a setInterval call would be to save the timestamp from the initial fetch in a new piece of state, and compare that timestamp to the current time whenever a game is clicked to get details.  If more than a few minutes have elapsed since the initial fetch, we would dispatch fetchGames again.  This controller logic could happen one of two ways - the check could take place and we could dispatch the appropriate action(s) from a clickHandler function in our GameList component, or we could add a thunk that is dispatched from the UI at the same point setDetailIndex is now,  which would have the ability to perform the conditional check and dispatch additional action(s) as needed.
