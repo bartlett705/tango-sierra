@@ -38,9 +38,12 @@ export class GameList extends React.Component<CombinedTypes, void> {
                       <td>Addons?</td>
                       <td>Voice?</td>
                     </tr>
-                    {this.props.games.length ?
+                    { this.props.games.length ?
                       this.props.games.map((game: Game, index: Number) => <GameEntry gameData={game} key={`${game.Name}${index}`} viewDetail={() => this.props.setDetailIndex(index)}/>) :
-                      <tr><td colSpan={4} className='GameList--loading-text'>Loading...{this.props.progress}%</td></tr>}
+                      this.props.isError ?
+                        <tr><td colSpan={4}><h3>Couldn't reach Curse CDN :(</h3></td></tr> :
+                        <tr><td colSpan={4}><h3>Loading...{this.props.progress}%</h3></td></tr>
+                      }
                   </tbody>
                 </table>
                 <GameDetail gameData={this.props.games[this.props.detailIndex]} />
